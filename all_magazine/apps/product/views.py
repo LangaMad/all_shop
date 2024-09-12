@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from rest_framework import generics,views,viewsets,response
+from .serializers import *
 # Create your views here.
+
+class TestProductApiView(generics.ListAPIView):
+    queryset = TestProduct.objects.all()
+    serializer_class = TestProductSerializer
+
+
 
 
 # class TestProductApiView(views.APIView):
